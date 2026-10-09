@@ -18,7 +18,7 @@ outputs already computed, or **run and modify** it in one of two ways:
 To run the notebooks on your own computer:
 
 ```bash
-git clone https://github.com/YOUR-GITHUB-USERNAME/math-for-ai.git
+git clone https://github.com/muratakcs/math-for-ai.git
 cd math-for-ai
 pip install -r requirements.txt
 jupyter lab

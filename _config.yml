@@ -19,7 +19,7 @@ parse:
     - html_image
 
 repository:
-  url: https://github.com/YOUR-GITHUB-USERNAME/math-for-ai
+  url: https://github.com/muratakcs/math-for-ai
   branch: main
 
 html:

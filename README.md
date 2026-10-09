@@ -3,7 +3,7 @@
 Code-first lecture notebooks for the M.Sc. course *Mathematics for AI*, following
 Deisenroth, Faisal & Ong, *Mathematics for Machine Learning* (CUP 2020, [mml-book.com](https://mml-book.com)).
 
-* **Website:** https://YOUR-GITHUB-USERNAME.github.io/math-for-ai (built automatically from this repository)
+* **Website:** https://muratakcs.github.io/math-for-ai (built automatically from this repository)
 * Every notebook can be opened in **Google Colab** or run directly **in the browser** (JupyterLite, no account needed).
 
 ## Repository layout
