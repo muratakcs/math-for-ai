@@ -1,0 +1,6 @@
+# Packages needed to RUN the notebooks (students, local use)
+numpy
+sympy
+matplotlib
+ipywidgets
+jupyterlab

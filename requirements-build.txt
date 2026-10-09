@@ -1,0 +1,8 @@
+# Packages needed to BUILD the website (GitHub Actions)
+-r requirements.txt
+jupyter-book>=1.0,<2
+nbclient
+ipykernel
+jupyter-server
+jupyterlite-core>=0.6
+jupyterlite-pyodide-kernel>=0.6

@@ -1,0 +1,7 @@
+# Table of contents: add one line per new notebook.
+format: jb-book
+root: intro
+parts:
+  - caption: "Chapter 2: Linear Algebra"
+    chapters:
+      - file: notebooks/ch02/2.3-solving-linear-systems

@@ -1,0 +1,54 @@
+# Builds the website (Jupyter Book) and the in-browser JupyterLite environment,
+# then publishes both to GitHub Pages on every push to main.
+name: Build and deploy website
+
+on:
+  push:
+    branches: [main]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+concurrency:
+  group: pages
+  cancel-in-progress: true
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+          cache: pip
+
+      - name: Install dependencies
+        run: pip install -r requirements-build.txt
+
+      - name: Check that every notebook runs without errors
+        run: python tools/run_notebooks.py
+
+      - name: Build the website
+        run: jupyter-book build .
+
+      - name: Build JupyterLite (notebooks that run in the browser)
+        run: jupyter lite build --contents notebooks --output-dir _build/html/lite
+
+      - uses: actions/upload-pages-artifact@v3
+        with:
+          path: _build/html
+
+  deploy:
+    needs: build
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - id: deployment
+        uses: actions/deploy-pages@v4
